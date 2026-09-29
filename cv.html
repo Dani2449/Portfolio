@@ -1,480 +1,464 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2775.1">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Arial}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Arial; min-height: 14.0px}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Giorgi Getsadze | CV</title>
+  <meta name="description" content="CV of Giorgi Getsadze, Full-Stack Software Engineer (Next.js, React, React Native, PostgreSQL) and Process Automation Lead based in Nice, France." />
+  <meta name="author" content="Giorgi Getsadze" />
+  <meta name="theme-color" content="#0f1f3a" />
+  <meta property="og:type" content="profile" />
+  <meta property="og:title" content="Giorgi Getsadze | CV" />
+  <meta property="og:description" content="Full-Stack Software Engineer: web and mobile products, process automation and AI. Based in Nice, France." />
+  <meta property="og:url" content="https://getsadze.neocities.org/cv" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231757c9'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='28' fill='white'%3EGG%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --bg:#f4f6fa; --paper:#ffffff; --side:#0f1f3a; --side-text:#dfe6f2; --side-muted:#9fb0cc;
+      --text:#17202e; --muted:#566173; --line:#e3e8ef; --accent:#1757c9; --accent-soft:#e8f0fe; --on-accent:#ffffff;
+      --brand-grad:linear-gradient(135deg,#1f6feb,#12a4b8);
+      --radius:14px; --maxw:1080px;
+    }
+    @media (prefers-color-scheme: dark){
+      :root{
+        --bg:#0b1220; --paper:#121b2c; --side:#0a1426; --side-text:#dfe6f2; --side-muted:#8fa2c2;
+        --text:#e7ecf4; --muted:#a3afc2; --line:#24314a; --accent:#6aa6ff; --accent-soft:#1a2a47; --on-accent:#0b1220;
+      }
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;scroll-padding-top:80px}
+    body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;font-size:15px;padding:0 0 48px;-webkit-font-smoothing:antialiased}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+    ul{list-style:none}
+
+    /* Site header (same on both pages) */
+    .site-header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 85%,transparent);-webkit-backdrop-filter:saturate(160%) blur(12px);backdrop-filter:saturate(160%) blur(12px);border-bottom:1px solid var(--line)}
+    .site-header-in{max-width:var(--maxw);margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:10px;color:var(--text);text-decoration:none;font-weight:700;font-size:1rem;letter-spacing:-.01em;white-space:nowrap}
+    .brand-avatar{position:relative;flex:none;width:36px;height:36px;border-radius:50%;overflow:hidden;display:grid;place-items:center;background:var(--brand-grad);color:#fff;font-size:.75rem;font-weight:800;box-shadow:0 0 0 2px var(--paper),0 0 0 3px var(--line)}
+    .brand-avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .nav-links{display:flex;gap:28px}
+    .nav-links a{color:var(--muted);font-size:.92rem;font-weight:500}
+    .nav-links a:hover{color:var(--text)}
+    .brand:hover,.nav-links a:hover,.btn:hover{text-decoration:none}
+    .btn{display:inline-flex;align-items:center;gap:8px;white-space:nowrap;padding:8px 16px;border-radius:999px;font:inherit;font-weight:600;font-size:.88rem;border:1px solid transparent;cursor:pointer;transition:transform .15s ease}
+    .btn:hover{transform:translateY(-1px)}
+    .btn svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .btn-primary{background:var(--accent);color:var(--on-accent);box-shadow:0 10px 24px -10px color-mix(in srgb,var(--accent) 70%,transparent)}
+
+    .page{padding:28px 24px 0}
+
+    /* Card layout: header + skills column on the left, main content on the right */
+    .cv{max-width:1080px;margin:0 auto;background:var(--paper);border-radius:var(--radius);overflow:hidden;box-shadow:0 20px 50px rgba(15,31,58,.12);display:grid;grid-template-columns:320px 1fr;grid-template-rows:auto 1fr;grid-template-areas:"top main" "rest main"}
+    .side{background:var(--side);color:var(--side-text)}
+    .side-top{grid-area:top;padding:40px 30px 0}
+    .side-rest{grid-area:rest;padding:0 30px 40px}
+    .main{grid-area:main;padding:44px 48px}
+
+    /* Sidebar */
+    .avatar{position:relative;width:150px;height:150px;border-radius:50%;margin:0 auto 20px;border:4px solid rgba(255,255,255,.15);background:var(--brand-grad);display:grid;place-items:center;font-size:3rem;font-weight:800;color:#fff;overflow:hidden}
+    .avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .side h1{font-size:1.6rem;font-weight:800;text-align:center;line-height:1.2;color:#fff}
+    .side .role{text-align:center;color:var(--side-muted);font-size:.9rem;margin-top:6px}
+    .nw{white-space:nowrap}
+    .side h2{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--side-muted);margin:32px 0 12px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.12)}
+    .contact li{display:flex;gap:10px;align-items:flex-start;font-size:.88rem;margin-bottom:10px;word-break:break-word}
+    .contact svg{flex:none;width:16px;height:16px;margin-top:3px;fill:none;stroke:var(--side-muted);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .contact a{color:var(--side-text)}
+    .chips{display:flex;flex-wrap:wrap;gap:6px}
+    .chips li{font-size:.76rem;padding:4px 10px;border-radius:999px;background:rgba(255,255,255,.08);color:var(--side-text)}
+    .skill-group{margin-bottom:14px}
+    .skill-group h3{font-size:.8rem;font-weight:600;color:#fff;margin-bottom:7px}
+    .lang li{display:flex;justify-content:space-between;gap:8px;font-size:.88rem;margin-bottom:8px}
+    .lang span{color:var(--side-muted);font-size:.78rem;text-align:right}
+    .certs li{font-size:.85rem;margin-bottom:10px}
+    .certs small{display:block;color:var(--side-muted);font-size:.76rem}
+
+    /* Main */
+    .section{margin-bottom:38px}
+    .section:last-child{margin-bottom:0}
+    .section-title{display:flex;align-items:center;gap:12px;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:18px}
+    .section-title::after{content:"";flex:1;height:1px;background:var(--line)}
+    .summary{font-size:1rem}
+    .summary p + p{margin-top:10px}
+    /* Products and sites (same component as on the landing page) */
+    .proof{margin-top:20px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .proof-row{display:grid;grid-template-columns:175px 1fr;gap:14px;align-items:center;padding:12px 0}
+    .proof-row + .proof-row{border-top:1px solid var(--line)}
+    .proof-label{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+    .proof-items{display:flex;flex-wrap:wrap;gap:6px}
+    .proof-items a{display:inline-flex;align-items:center;gap:5px;padding:4px 12px;border-radius:999px;background:var(--bg);border:1px solid var(--line);color:var(--text);font-weight:600;font-size:.82rem;transition:border-color .15s ease,color .15s ease}
+    .proof-items a:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+    .proof-items svg{width:12px;height:12px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;opacity:.55}
+
+    .job{position:relative;padding-left:22px;margin-bottom:26px}
+    .job:last-child{margin-bottom:0}
+    .job::before{content:"";position:absolute;left:0;top:8px;width:9px;height:9px;border-radius:50%;background:var(--accent)}
+    .job::after{content:"";position:absolute;left:4px;top:22px;bottom:-22px;width:1px;background:var(--line)}
+    .job:last-child::after{display:none}
+    .job-head{display:flex;justify-content:space-between;gap:4px 16px;flex-wrap:wrap;align-items:baseline}
+    .job h3{font-size:1.05rem;font-weight:700}
+    .date{font-size:.8rem;color:var(--muted);font-weight:500}
+    .org{font-size:.9rem;color:var(--accent);font-weight:600;margin:2px 0 8px}
+    .org span{color:var(--muted);font-weight:400}
+    .job ul li{position:relative;padding-left:16px;font-size:.92rem;margin-bottom:5px}
+    .job ul li::before{content:"";position:absolute;left:0;top:.65em;width:6px;height:2px;background:var(--muted)}
+    .sub-role{margin-top:18px}
+    .sub-role h4{font-size:.95rem;font-weight:600}
+    .sub-role .date{display:block;margin-bottom:4px}
+    .label{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700;margin:10px 0 6px}
+    .sites{font-size:.85rem;color:var(--muted);margin-top:8px}
+    .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+    .tags li{font-size:.72rem;padding:3px 9px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-weight:600}
+    .job ul.tags li{padding:3px 9px;margin:0}
+    .job ul.tags li::before{content:none}
+
+    .projects{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .project{border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+    .project h3{font-size:.98rem;font-weight:700}
+    .project .date{display:block;margin-bottom:6px}
+    .project p{font-size:.88rem;color:var(--muted)}
+
+    .edu{margin-bottom:16px}
+    .edu:last-child{margin-bottom:0}
+    .edu h3{font-size:1rem;font-weight:700}
+    .edu p{font-size:.9rem;color:var(--muted)}
+    .edu .org{color:var(--accent);margin-bottom:4px}
+
+    blockquote{border-left:3px solid var(--accent);background:var(--accent-soft);padding:16px 20px;border-radius:0 10px 10px 0;font-size:.95rem;font-style:italic}
+    blockquote cite{display:block;margin-top:8px;font-style:normal;font-size:.82rem;color:var(--muted)}
+    blockquote + blockquote{margin-top:14px}
+
+    /* Phones and small tablets: name + contact first, then the CV, then skills */
+    @media screen and (max-width:860px){
+      body{padding:0 0 32px}
+      .site-header-in{padding:0 16px}
+      .nav-links{display:none}
+      .hide-sm{display:none}
+      .page{padding:0}
+      .cv{grid-template-columns:1fr;grid-template-rows:auto;grid-template-areas:"top" "main" "rest";border-radius:0;box-shadow:none}
+      .side-top{padding:32px 20px 28px}
+      .side-rest{padding:4px 20px 36px}
+      .main{padding:32px 20px}
+      .projects{grid-template-columns:1fr}
+      .proof-row{grid-template-columns:1fr;gap:8px}
+    }
+
+    /* Print / Save as PDF: always light, two columns, no buttons */
+    @media print{
+      :root{
+        --bg:#ffffff; --paper:#ffffff; --side:#0f1f3a; --side-text:#dfe6f2; --side-muted:#9fb0cc;
+        --text:#17202e; --muted:#566173; --line:#e3e8ef; --accent:#1757c9; --accent-soft:#e8f0fe;
+      }
+      @page{margin:10mm}
+      body{padding:0;font-size:11px}
+      .site-header{display:none}
+      .page{padding:0}
+      .cv{max-width:none;box-shadow:none;border-radius:0;grid-template-columns:230px 1fr}
+      .side,.avatar,.proof-items a,.tags li,blockquote{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+      .side-top{padding:28px 20px 0}
+      .side-rest{padding:0 20px 28px}
+      .main{padding:24px 28px}
+      .sub-role,.project,.edu,blockquote,.job-head{break-inside:avoid}
+    }
   </style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="en"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;Giorgi Getsadze | CV&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="description" content="CV of Giorgi Getsadze, Full-Stack Software Engineer (Next.js, React, React Native, PostgreSQL) and Process Automation Lead based in Nice, France." /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="author" content="Giorgi Getsadze" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="theme-color" content="#0f1f3a" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta property="og:type" content="profile" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta property="og:title" content="Giorgi Getsadze | CV" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta property="og:description" content="Full-Stack Software Engineer: web and mobile products, process automation and AI. Based in Nice, France." /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta property="og:url" content="https://getsadze.neocities.org/cv" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231757c9'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Arial,sans-serif' font-weight='700' font-size='28' fill='white'%3EGG%3C/text%3E%3C/svg%3E" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;link rel="preconnect" href="https://fonts.googleapis.com" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" /&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>:root{</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--bg:#f4f6fa; --paper:#ffffff; --side:#0f1f3a; --side-text:#dfe6f2; --side-muted:#9fb0cc;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--text:#17202e; --muted:#566173; --line:#e3e8ef; --accent:#1757c9; --accent-soft:#e8f0fe; --on-accent:#ffffff;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--brand-grad:linear-gradient(135deg,#1f6feb,#12a4b8);</p>
-<p class="p1"><span class="Apple-converted-space">      </span>--radius:14px; --maxw:1080px;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>@media (prefers-color-scheme: dark){</p>
-<p class="p1"><span class="Apple-converted-space">      </span>:root{</p>
-<p class="p1"><span class="Apple-converted-space">        </span>--bg:#0b1220; --paper:#121b2c; --side:#0a1426; --side-text:#dfe6f2; --side-muted:#8fa2c2;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>--text:#e7ecf4; --muted:#a3afc2; --line:#24314a; --accent:#6aa6ff; --accent-soft:#1a2a47; --on-accent:#0b1220;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>*{box-sizing:border-box;margin:0;padding:0}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>html{scroll-behavior:smooth;scroll-padding-top:80px}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;font-size:15px;padding:0 0 48px;-webkit-font-smoothing:antialiased}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>a{color:var(--accent);text-decoration:none}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>a:hover{text-decoration:underline}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>ul{list-style:none}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* Site header (same on both pages) */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.site-header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 85%,transparent);-webkit-backdrop-filter:saturate(160%) blur(12px);backdrop-filter:saturate(160%) blur(12px);border-bottom:1px solid var(--line)}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.site-header-in{max-width:var(--maxw);margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:16px}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.brand{display:flex;align-items:center;gap:10px;color:var(--text);text-decoration:none;font-weight:700;font-size:1rem;letter-spacing:-.01em;white-space:nowrap}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.brand-avatar{position:relative;flex:none;width:36px;height:36px;border-radius:50%;overflow:hidden;display:grid;place-items:center;background:var(--brand-grad);color:#fff;font-size:.75rem;font-weight:800;box-shadow:0 0 0 2px var(--paper),0 0 0 3px var(--line)}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.brand-avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.nav-links{display:flex;gap:28px}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.nav-links a{color:var(--muted);font-size:.92rem;font-weight:500}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.nav-links a:hover{color:var(--text)}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.brand:hover,.nav-links a:hover,.btn:hover{text-decoration:none}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.btn{display:inline-flex;align-items:center;gap:8px;white-space:nowrap;padding:8px 16px;border-radius:999px;font:inherit;font-weight:600;font-size:.88rem;border:1px solid transparent;cursor:pointer;transition:transform .15s ease}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.btn:hover{transform:translateY(-1px)}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.btn svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.btn-primary{background:var(--accent);color:var(--on-accent);box-shadow:0 10px 24px -10px color-mix(in srgb,var(--accent) 70%,transparent)}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.page{padding:28px 24px 0}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* Card layout: header + skills column on the left, main content on the right */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.cv{max-width:1080px;margin:0 auto;background:var(--paper);border-radius:var(--radius);overflow:hidden;box-shadow:0 20px 50px rgba(15,31,58,.12);display:grid;grid-template-columns:320px 1fr;grid-template-rows:auto 1fr;grid-template-areas:"top main" "rest main"}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.side{background:var(--side);color:var(--side-text)}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.side-top{grid-area:top;padding:40px 30px 0}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.side-rest{grid-area:rest;padding:0 30px 40px}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.main{grid-area:main;padding:44px 48px}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* Sidebar */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.avatar{position:relative;width:150px;height:150px;border-radius:50%;margin:0 auto 20px;border:4px solid rgba(255,255,255,.15);background:var(--brand-grad);display:grid;place-items:center;font-size:3rem;font-weight:800;color:#fff;overflow:hidden}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.side h1{font-size:1.6rem;font-weight:800;text-align:center;line-height:1.2;color:#fff}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.side .role{text-align:center;color:var(--side-muted);font-size:.9rem;margin-top:6px}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.nw{white-space:nowrap}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.side h2{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--side-muted);margin:32px 0 12px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.12)}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.contact li{display:flex;gap:10px;align-items:flex-start;font-size:.88rem;margin-bottom:10px;word-break:break-word}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.contact svg{flex:none;width:16px;height:16px;margin-top:3px;fill:none;stroke:var(--side-muted);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.contact a{color:var(--side-text)}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.chips{display:flex;flex-wrap:wrap;gap:6px}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.chips li{font-size:.76rem;padding:4px 10px;border-radius:999px;background:rgba(255,255,255,.08);color:var(--side-text)}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.skill-group{margin-bottom:14px}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.skill-group h3{font-size:.8rem;font-weight:600;color:#fff;margin-bottom:7px}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.lang li{display:flex;justify-content:space-between;gap:8px;font-size:.88rem;margin-bottom:8px}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.lang span{color:var(--side-muted);font-size:.78rem;text-align:right}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.certs li{font-size:.85rem;margin-bottom:10px}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.certs small{display:block;color:var(--side-muted);font-size:.76rem}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* Main */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.section{margin-bottom:38px}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.section:last-child{margin-bottom:0}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.section-title{display:flex;align-items:center;gap:12px;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:18px}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.section-title::after{content:"";flex:1;height:1px;background:var(--line)}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.summary{font-size:1rem}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.summary p + p{margin-top:10px}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* Products and sites (same component as on the landing page) */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.proof{margin-top:20px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.proof-row{display:grid;grid-template-columns:175px 1fr;gap:14px;align-items:center;padding:12px 0}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.proof-row + .proof-row{border-top:1px solid var(--line)}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.proof-label{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--muted)}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.proof-items{display:flex;flex-wrap:wrap;gap:6px}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.proof-items a{display:inline-flex;align-items:center;gap:5px;padding:4px 12px;border-radius:999px;background:var(--bg);border:1px solid var(--line);color:var(--text);font-weight:600;font-size:.82rem;transition:border-color .15s ease,color .15s ease}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.proof-items a:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.proof-items svg{width:12px;height:12px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;opacity:.55}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.job{position:relative;padding-left:22px;margin-bottom:26px}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.job:last-child{margin-bottom:0}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.job::before{content:"";position:absolute;left:0;top:8px;width:9px;height:9px;border-radius:50%;background:var(--accent)}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.job::after{content:"";position:absolute;left:4px;top:22px;bottom:-22px;width:1px;background:var(--line)}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.job:last-child::after{display:none}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.job-head{display:flex;justify-content:space-between;gap:4px 16px;flex-wrap:wrap;align-items:baseline}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.job h3{font-size:1.05rem;font-weight:700}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.date{font-size:.8rem;color:var(--muted);font-weight:500}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.org{font-size:.9rem;color:var(--accent);font-weight:600;margin:2px 0 8px}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.org span{color:var(--muted);font-weight:400}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.job ul li{position:relative;padding-left:16px;font-size:.92rem;margin-bottom:5px}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.job ul li::before{content:"";position:absolute;left:0;top:.65em;width:6px;height:2px;background:var(--muted)}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.sub-role{margin-top:18px}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.sub-role h4{font-size:.95rem;font-weight:600}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.sub-role .date{display:block;margin-bottom:4px}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.label{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700;margin:10px 0 6px}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.sites{font-size:.85rem;color:var(--muted);margin-top:8px}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.tags li{font-size:.72rem;padding:3px 9px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-weight:600}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.job ul.tags li{padding:3px 9px;margin:0}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.job ul.tags li::before{content:none}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.projects{display:grid;grid-template-columns:1fr 1fr;gap:14px}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.project{border:1px solid var(--line);border-radius:12px;padding:16px 18px}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.project h3{font-size:.98rem;font-weight:700}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.project .date{display:block;margin-bottom:6px}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.project p{font-size:.88rem;color:var(--muted)}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>.edu{margin-bottom:16px}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.edu:last-child{margin-bottom:0}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.edu h3{font-size:1rem;font-weight:700}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.edu p{font-size:.9rem;color:var(--muted)}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>.edu .org{color:var(--accent);margin-bottom:4px}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>blockquote{border-left:3px solid var(--accent);background:var(--accent-soft);padding:16px 20px;border-radius:0 10px 10px 0;font-size:.95rem;font-style:italic}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>blockquote cite{display:block;margin-top:8px;font-style:normal;font-size:.82rem;color:var(--muted)}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>blockquote + blockquote{margin-top:14px}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* Phones and small tablets: name + contact first, then the CV, then skills */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>@media screen and (max-width:860px){</p>
-<p class="p1"><span class="Apple-converted-space">      </span>body{padding:0 0 32px}</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.site-header-in{padding:0 16px}</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.nav-links{display:none}</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.hide-sm{display:none}</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.page{padding:0}</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.cv{grid-template-columns:1fr;grid-template-rows:auto;grid-template-areas:"top" "main" "rest";border-radius:0;box-shadow:none}</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.side-top{padding:32px 20px 28px}</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.side-rest{padding:4px 20px 36px}</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.main{padding:32px 20px}</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.projects{grid-template-columns:1fr}</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.proof-row{grid-template-columns:1fr;gap:8px}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>/* Print / Save as PDF: always light, two columns, no buttons */</p>
-<p class="p1"><span class="Apple-converted-space">    </span>@media print{</p>
-<p class="p1"><span class="Apple-converted-space">      </span>:root{</p>
-<p class="p1"><span class="Apple-converted-space">        </span>--bg:#ffffff; --paper:#ffffff; --side:#0f1f3a; --side-text:#dfe6f2; --side-muted:#9fb0cc;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>--text:#17202e; --muted:#566173; --line:#e3e8ef; --accent:#1757c9; --accent-soft:#e8f0fe;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>}</p>
-<p class="p1"><span class="Apple-converted-space">      </span>@page{margin:10mm}</p>
-<p class="p1"><span class="Apple-converted-space">      </span>body{padding:0;font-size:11px}</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.site-header{display:none}</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.page{padding:0}</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.cv{max-width:none;box-shadow:none;border-radius:0;grid-template-columns:230px 1fr}</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.side,.avatar,.proof-items a,.tags li,blockquote{-webkit-print-color-adjust:exact;print-color-adjust:exact}</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.side-top{padding:28px 20px 0}</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.side-rest{padding:0 20px 28px}</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.main{padding:24px 28px}</p>
-<p class="p1"><span class="Apple-converted-space">      </span>.sub-role,.project,.edu,blockquote,.job-head{break-inside:avoid}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>}</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;header class="site-header"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="site-header-in"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;a class="brand" href="/"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span class="brand-avatar"&gt;&lt;span aria-hidden="true"&gt;GG&lt;/span&gt;&lt;img src="CV%20Picture.jpeg" alt="" onerror="this.remove()" /&gt;&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>Giorgi Getsadze</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;nav aria-label="Sections"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;ul class="nav-links"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;&lt;a href="/"&gt;About me&lt;/a&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;&lt;a href="#experience"&gt;Experience&lt;/a&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;&lt;a href="#projects"&gt;Projects&lt;/a&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;li&gt;&lt;a href="#education"&gt;Education&lt;/a&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/nav&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;button class="btn btn-primary" type="button" onclick="window.print()"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;svg viewBox="0 0 24 24" aria-hidden="true"&gt;&lt;path d="M12 4v11M7 10l5 5 5-5M5 20h14"/&gt;&lt;/svg&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;span&gt;&lt;span class="hide-sm"&gt;Download &lt;/span&gt;PDF&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/button&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/header&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="page"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="cv"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;header class="side side-top"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="avatar"&gt;&lt;span aria-hidden="true"&gt;GG&lt;/span&gt;&lt;img src="CV%20Picture.jpeg" alt="Giorgi Getsadze" onerror="this.remove()" /&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;h1&gt;Giorgi Getsadze&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="role"&gt;Full-Stack Software Engineer&lt;br /&gt;Web &amp;amp; Mobile &amp;middot; &lt;span class="nw"&gt;Process Automation &amp;middot; AI&lt;/span&gt;&lt;/p&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2&gt;Contact&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;ul class="contact"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;svg viewBox="0 0 24 24" aria-hidden="true"&gt;&lt;path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/&gt;&lt;circle cx="12" cy="10" r="2.5"/&gt;&lt;/svg&gt;Nice, France (Monaco area)&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;svg viewBox="0 0 24 24" aria-hidden="true"&gt;&lt;rect x="2" y="4" width="20" height="16" rx="2"/&gt;&lt;path d="M22 6l-10 7L2 6"/&gt;&lt;/svg&gt;&lt;a href="mailto:giorgigetsadzefr@gmail.com"&gt;giorgigetsadzefr@gmail.com&lt;/a&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;svg viewBox="0 0 24 24" aria-hidden="true"&gt;&lt;rect x="3" y="3" width="18" height="18" rx="3"/&gt;&lt;path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/&gt;&lt;/svg&gt;&lt;a href="https://www.linkedin.com/in/giorgigetsadze" target="_blank" rel="noopener"&gt;linkedin.com/in/giorgigetsadze&lt;/a&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;svg viewBox="0 0 24 24" aria-hidden="true"&gt;&lt;circle cx="12" cy="12" r="9"/&gt;&lt;path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/&gt;&lt;/svg&gt;&lt;a href="https://www.xpylon.com" target="_blank" rel="noopener"&gt;www.xpylon.com&lt;/a&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/header&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;main class="main"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;section class="section" id="profile"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2 class="section-title"&gt;Profile&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="summary"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;Full-stack software engineer with a business background. I build and ship production web and mobile features for &lt;a href="https://www.xpylon.com" target="_blank" rel="noopener"&gt;Xpylon&lt;/a&gt;, an AI-powered B2B matchmaking platform, using Next.js, React, React Native / Expo, Prisma and PostgreSQL, taking ideas from concept through architecture, implementation, testing and release.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;In parallel I lead web development and process automation at Go-on Group in Monaco, where I use Python and AI tools to remove manual work, run the group's websites and SEO, and drove the migration from Liferay to WordPress. Years in business development and back-office leadership give me strong product sense and a focus on results.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="proof"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="proof-row"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="proof-label"&gt;Products I built&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;ul class="proof-items"&gt;&lt;li&gt;&lt;a href="https://www.xpylon.com" target="_blank" rel="noopener"&gt;Xpylon app&lt;svg viewBox="0 0 24 24" aria-hidden="true"&gt;&lt;path d="M7 17L17 7M9 7h8v8"/&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="#projects"&gt;Web Scraper GUI&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="#projects"&gt;AI Company-Research Agent&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="#projects"&gt;AI Job Scraper&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="#projects"&gt;Messaging Automation&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="proof-row"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="proof-label"&gt;Sites I build and run&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;ul class="proof-items"&gt;&lt;li&gt;&lt;a href="https://www.xpylon.com" target="_blank" rel="noopener"&gt;Xpylon&lt;svg viewBox="0 0 24 24" aria-hidden="true"&gt;&lt;path d="M7 17L17 7M9 7h8v8"/&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="https://www.go-on-group.com" target="_blank" rel="noopener"&gt;Go-on Group&lt;svg viewBox="0 0 24 24" aria-hidden="true"&gt;&lt;path d="M7 17L17 7M9 7h8v8"/&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="https://goam.go-on-group.com" target="_blank" rel="noopener"&gt;GOAM&lt;svg viewBox="0 0 24 24" aria-hidden="true"&gt;&lt;path d="M7 17L17 7M9 7h8v8"/&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="https://www.gcmonaco.com" target="_blank" rel="noopener"&gt;GC Monaco&lt;svg viewBox="0 0 24 24" aria-hidden="true"&gt;&lt;path d="M7 17L17 7M9 7h8v8"/&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="https://businesstalks.mc" target="_blank" rel="noopener"&gt;Business Talks&lt;svg viewBox="0 0 24 24" aria-hidden="true"&gt;&lt;path d="M7 17L17 7M9 7h8v8"/&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;section class="section" id="experience"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2 class="section-title"&gt;Experience&lt;/h2&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;article class="job"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="job-head"&gt;&lt;h3&gt;Full-Stack Software Engineer&lt;/h3&gt;&lt;span class="date"&gt;Apr 2025 - Present&lt;/span&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="org"&gt;Xpylon &lt;span&gt;&amp;middot; Freelance &amp;middot; Nice, France (Remote)&lt;/span&gt;&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;Design and deliver cross-platform features with Next.js, React, Expo / React Native, Prisma and PostgreSQL.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;Built the virtual business-card experience: QR sharing and scanning, public profiles, deep linking, contact saving, data extraction and exports.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;Develop core product workflows: communities, messaging, notifications, content publishing, invitations, search, profiles and administration.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;Build backend APIs, database changes, authorization controls, duplicate detection, bulk operations and data-management tools.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;Maintain integrations for Stripe subscriptions and webhooks, social authentication, push notifications and transactional email.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;Diagnose production issues, improve reliability and responsive UX, and manage Android releases on Google Play.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;ul class="tags"&gt;&lt;li&gt;Next.js&lt;/li&gt;&lt;li&gt;React&lt;/li&gt;&lt;li&gt;React Native&lt;/li&gt;&lt;li&gt;Prisma&lt;/li&gt;&lt;li&gt;PostgreSQL&lt;/li&gt;&lt;li&gt;Stripe&lt;/li&gt;&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/article&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;article class="job"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="job-head"&gt;&lt;h3&gt;Go-on Group Business Development&lt;/h3&gt;&lt;span class="date"&gt;Jun 2019 - Present&lt;/span&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="org"&gt;Monaco &lt;span&gt;&amp;middot; 7 yrs 4 mos &amp;middot; four roles&lt;/span&gt;&lt;/p&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="sub-role"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h4&gt;Web Development &amp;amp; Process Automation Lead&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="date"&gt;Jan 2022 - Present &amp;middot; Permanent &amp;middot; Hybrid&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="label"&gt;What I do&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;li&gt;Apply Python automation and AI tools to streamline workflows: reporting, data processing and web scraping.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;li&gt;Build and grow the web presence for Xpylon, our AI-powered B2B matchmaking platform: landing pages, conversion funnels, an insights blog and a YouTube series; brought Xpylon to Google Play (bug fixes, new development, maintenance, store listing).&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;li&gt;Lead web development and management across Go-on Group's web properties on WordPress, including the migration from Liferay.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;li&gt;Own the group's SEO and GEO (generative-engine optimization) strategy: competitor analysis, keyword research and on-page work to grow visibility across Google and AI search engines.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;li&gt;Manage digital marketing and the company's email-signature infrastructure across 50+ users.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;li&gt;Manage the GDPR compliance project to ensure data protection.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="label"&gt;Key achievements&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;li&gt;Built automated reporting and branded KPI decks for leadership, cutting manual workload.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;li&gt;Launched Xpylon on Google Play, taking the platform mobile.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;li&gt;Ran a full SEO/GEO audit and keyword program, growing organic visibility for Go-on Group and Xpylon.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;li&gt;Migrated the company's web presence from Liferay to WordPress, improving performance and user experience.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="sites"&gt;Websites: &lt;a href="https://www.go-on-group.com/" target="_blank" rel="noopener"&gt;go-on-group.com&lt;/a&gt; &amp;middot; &lt;a href="https://goam.go-on-group.com/" target="_blank" rel="noopener"&gt;goam.go-on-group.com&lt;/a&gt; &amp;middot; &lt;a href="https://www.xpylon.com/" target="_blank" rel="noopener"&gt;www.xpylon.com&lt;/a&gt; &amp;middot; &lt;a href="https://www.gcmonaco.com/" target="_blank" rel="noopener"&gt;gcmonaco.com&lt;/a&gt; &amp;middot; &lt;a href="https://businesstalks.mc/" target="_blank" rel="noopener"&gt;businesstalks.mc&lt;/a&gt;&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;ul class="tags"&gt;&lt;li&gt;Python&lt;/li&gt;&lt;li&gt;Process automation&lt;/li&gt;&lt;li&gt;WordPress&lt;/li&gt;&lt;li&gt;SEO / GEO&lt;/li&gt;&lt;li&gt;GDPR&lt;/li&gt;&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="sub-role"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h4&gt;Head / Partner of Back Office&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="date"&gt;Aug 2021 - Present &amp;middot; Permanent &amp;middot; Remote&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="label"&gt;What I do&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;li&gt;Lead and manage the back-office team to ensure efficient operations.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;li&gt;Develop team-building initiatives to enhance collaboration.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;li&gt;Solve complex problems to improve workflow and productivity.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;li&gt;Communicate across departments to align goals and objectives.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="label"&gt;Key achievements&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;li&gt;Streamlined back-office processes, improving the efficiency of other teams and the group.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;li&gt;Reduced group costs through the back office and implemented solutions that lowered operational costs.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;ul class="tags"&gt;&lt;li&gt;Team leadership&lt;/li&gt;&lt;li&gt;Communication&lt;/li&gt;&lt;li&gt;Strategic planning&lt;/li&gt;&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="sub-role"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h4&gt;Business Development Specialist&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="date"&gt;Oct 2019 - Present &amp;middot; Freelance &amp;middot; Hybrid&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="label"&gt;What I do&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;li&gt;Conduct market analysis to identify growth opportunities.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;li&gt;Drive business development initiatives to expand the client base.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;li&gt;Manage inside sales and client acquisition processes.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;li&gt;Analyze data to inform business strategies and support back-office functions.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="label"&gt;Key achievements&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;li&gt;Helped secure new clients every year to increase revenue: 15 in 2023 and 30 in 2024.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;li&gt;Improved data analysis processes and market research.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;li&gt;Expanded the new CRM system (Microsoft Dynamics).&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;ul class="tags"&gt;&lt;li&gt;Business development&lt;/li&gt;&lt;li&gt;Market analysis&lt;/li&gt;&lt;li&gt;CRM&lt;/li&gt;&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="sub-role"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h4&gt;Financial Business Development Intern&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="date"&gt;Jun 2019 - Oct 2019 &amp;middot; On-site&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="label"&gt;What I did&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;li&gt;Designed strategies to expand the company globally over the following years.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;li&gt;Identified cost-effective methods to grow the company's offices worldwide.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;li&gt;Collaborated with international teams and analyzed information to forecast upcoming trends.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;li&gt;Prepared reports for the CEO to review progress and guide future actions.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="label"&gt;Key achievements&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;li&gt;Created a growth plan adapted to different markets and future opportunities.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;li&gt;Helped make operations cheaper and more efficient.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;li&gt;Initiated the process to open the company's first office in Georgia.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;ul class="tags"&gt;&lt;li&gt;Strategic planning&lt;/li&gt;&lt;li&gt;Cost optimization&lt;/li&gt;&lt;li&gt;Presentations&lt;/li&gt;&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/article&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;article class="job"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="job-head"&gt;&lt;h3&gt;Inventory Specialist&lt;/h3&gt;&lt;span class="date"&gt;Nov 2018 - Jun 2019&lt;/span&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="org"&gt;RGIS &lt;span&gt;&amp;middot; Greater Nice area, France&lt;/span&gt;&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;Carried out timed stock counts and met target goals.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/article&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;article class="job"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="job-head"&gt;&lt;h3&gt;Guest Relations Specialist&lt;/h3&gt;&lt;span class="date"&gt;Oct 2017 - Apr 2018&lt;/span&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="org"&gt;Eldan &lt;span&gt;&amp;middot; Jerusalem, Israel&lt;/span&gt;&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;Provided full customer service for hostel guests and resolved their issues.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;Handled room reservations, payments and refunds.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/article&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;article class="job"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="job-head"&gt;&lt;h3&gt;Envirotech&lt;/h3&gt;&lt;span class="date"&gt;May 2016 - Sep 2017&lt;/span&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="org"&gt;Georgia &lt;span&gt;&amp;middot; 1 yr 5 mos &amp;middot; two roles&lt;/span&gt;&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="sub-role"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h4&gt;Sales Department Manager&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="date"&gt;May 2017 - Sep 2017&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;li&gt;Managed a team of four people and handled hiring.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;li&gt;Developed the new sales department and achieved its goals.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="sub-role"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h4&gt;Sales Representative&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="date"&gt;May 2016 - May 2017&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;li&gt;Sold services and performed cost-benefit analyses for existing and potential customers.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">              </span>&lt;li&gt;Maintained positive business relationships to ensure future sales, working both individually and in a team.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/article&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;section class="section" id="projects"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2 class="section-title"&gt;Projects&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="projects"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="project"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;Web Scraper GUI&lt;/h3&gt;&lt;span class="date"&gt;2026 - Present&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;Desktop scraper for trade-show and directory websites. Works from a URL, local HTML or an Excel list of links, handles JavaScript-heavy pages with infinite scroll or pagination, and includes a visual picker so no selectors are needed.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;ul class="tags"&gt;&lt;li&gt;Python&lt;/li&gt;&lt;li&gt;Selenium&lt;/li&gt;&lt;li&gt;PyQt&lt;/li&gt;&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="project"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;AI Company-Research Agent&lt;/h3&gt;&lt;span class="date"&gt;2025 - Present&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;Takes an Excel list of companies, finds each official website and extracts business contact emails. Uses a local AI model so data stays on the machine, and flags uncertain rows for review.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;ul class="tags"&gt;&lt;li&gt;Python&lt;/li&gt;&lt;li&gt;Local LLM&lt;/li&gt;&lt;li&gt;Excel&lt;/li&gt;&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="project"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;Weekly AI LinkedIn Job Scraper&lt;/h3&gt;&lt;span class="date"&gt;2026 - Present&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;Automated pipeline that collects job postings every week and uses AI to parse and summarize each description, surfacing relevant roles and key requirements.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;ul class="tags"&gt;&lt;li&gt;Python&lt;/li&gt;&lt;li&gt;AI&lt;/li&gt;&lt;li&gt;Scheduling&lt;/li&gt;&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="project"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;Rich-Text Messaging Automation&lt;/h3&gt;&lt;span class="date"&gt;2022 - Present&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;Cross-platform desktop app that sends personalized HTML emails in bulk through Outlook from an Excel contact list, with a rich-text editor and per-row personalization.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;ul class="tags"&gt;&lt;li&gt;Python&lt;/li&gt;&lt;li&gt;Outlook&lt;/li&gt;&lt;li&gt;Email marketing&lt;/li&gt;&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;section class="section" id="education"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2 class="section-title"&gt;Education&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="edu"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="job-head"&gt;&lt;h3&gt;Master's degree, European &amp;amp; International Private Banking&lt;/h3&gt;&lt;span class="date"&gt;2018 - 2019&lt;/span&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="org"&gt;IAE Nice &amp;middot; Graduate School of Management&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;Grade 15.5 / 20. Financial management, international accounting, investment strategies, portfolio management, credit risk. Regularly selected as team project lead.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="edu"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="job-head"&gt;&lt;h3&gt;Bachelor of Business Administration (BBA), Healthcare Administration&lt;/h3&gt;&lt;span class="date"&gt;2011 - 2015&lt;/span&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="org"&gt;Teaching University "Geomedi", Tbilisi&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;Economics, statistics, accounting, financial management, macroeconomics.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;section class="section" id="recommendations"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2 class="section-title"&gt;Recommendations&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;blockquote&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>"I had the pleasure of working with Giorgi while he was leading the Back Office team, and I can say that he was always someone we could rely on. He manages his team very well, keeps things organized and is always available to support when needed. &amp;hellip; He is very good at multitasking, can handle different priorities at the same time, and always finds a way to get things done."</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;cite&gt;Ana Chelidze, Back Office Manager &amp;middot; Go-on Group Business Development&lt;/cite&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/blockquote&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;blockquote&gt;</p>
-<p class="p1"><span class="Apple-converted-space">          </span>"He is a very passionate and curious person, who is always looking to improve his skills and knowledge. He is a solution finder and logical minded."</p>
-<p class="p1"><span class="Apple-converted-space">          </span>&lt;cite&gt;Paul Gray, Ing&amp;eacute;nieur Commercial &amp;middot; worked with Giorgi at Go-on Group&lt;/cite&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/blockquote&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/section&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/main&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;aside class="side side-rest" aria-label="Skills, languages and certifications"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2&gt;Skills&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="skill-group"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3&gt;Frontend &amp;amp; Mobile&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;ul class="chips"&gt;&lt;li&gt;React&lt;/li&gt;&lt;li&gt;Next.js&lt;/li&gt;&lt;li&gt;React Native&lt;/li&gt;&lt;li&gt;Expo&lt;/li&gt;&lt;li&gt;JavaScript&lt;/li&gt;&lt;li&gt;HTML / CSS&lt;/li&gt;&lt;li&gt;Responsive UX&lt;/li&gt;&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="skill-group"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3&gt;Backend &amp;amp; Data&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;ul class="chips"&gt;&lt;li&gt;Prisma&lt;/li&gt;&lt;li&gt;PostgreSQL&lt;/li&gt;&lt;li&gt;REST APIs&lt;/li&gt;&lt;li&gt;Auth &amp;amp; permissions&lt;/li&gt;&lt;li&gt;Stripe&lt;/li&gt;&lt;li&gt;Push notifications&lt;/li&gt;&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="skill-group"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3&gt;Automation &amp;amp; AI&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;ul class="chips"&gt;&lt;li&gt;Python&lt;/li&gt;&lt;li&gt;Selenium&lt;/li&gt;&lt;li&gt;Web scraping&lt;/li&gt;&lt;li&gt;PyQt&lt;/li&gt;&lt;li&gt;LLM tools&lt;/li&gt;&lt;li&gt;Excel automation&lt;/li&gt;&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="skill-group"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3&gt;Web &amp;amp; Growth&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;ul class="chips"&gt;&lt;li&gt;WordPress&lt;/li&gt;&lt;li&gt;SEO / GEO&lt;/li&gt;&lt;li&gt;Email marketing&lt;/li&gt;&lt;li&gt;GDPR&lt;/li&gt;&lt;li&gt;Analytics&lt;/li&gt;&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="skill-group"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h3&gt;Business&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;ul class="chips"&gt;&lt;li&gt;Business development&lt;/li&gt;&lt;li&gt;Market analysis&lt;/li&gt;&lt;li&gt;MS Dynamics CRM&lt;/li&gt;&lt;li&gt;Team leadership&lt;/li&gt;&lt;li&gt;Project management&lt;/li&gt;&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2&gt;Languages&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;ul class="lang"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;li&gt;Georgian &lt;span&gt;Native&lt;/span&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;li&gt;Hebrew &lt;span&gt;Native&lt;/span&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;li&gt;English &lt;span&gt;Full professional&lt;/span&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;li&gt;Russian &lt;span&gt;Limited working&lt;/span&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;li&gt;French &lt;span&gt;Elementary&lt;/span&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/ul&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;h2&gt;Certifications&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;ul class="certs"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;li&gt;TOEIC English &amp;middot; score 840&lt;small&gt;TOEIC Program &amp;middot; Jul 2018&lt;/small&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;li&gt;English Level: Upper Intermediate&lt;small&gt;TLC Tbilisi Language Centre &amp;middot; Jul 2015&lt;/small&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;li&gt;Professional World&lt;small&gt;Technology Development Fund &amp;middot; Jul 2015&lt;/small&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;li&gt;ISIE Certificate&lt;small&gt;International School of Intellect and Education &amp;middot; Jun 2016&lt;/small&gt;&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">      </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/aside&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+  <header class="site-header">
+    <div class="site-header-in">
+      <a class="brand" href="/">
+        <span class="brand-avatar"><span aria-hidden="true">GG</span><img src="CV%20Picture.jpeg" alt="" onerror="this.remove()" /></span>
+        Giorgi Getsadze
+      </a>
+      <nav aria-label="Sections">
+        <ul class="nav-links">
+          <li><a href="/">About me</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#education">Education</a></li>
+        </ul>
+      </nav>
+      <button class="btn btn-primary" type="button" onclick="window.print()">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>
+        <span><span class="hide-sm">Download </span>PDF</span>
+      </button>
+    </div>
+  </header>
+
+  <div class="page">
+  <div class="cv">
+    <header class="side side-top">
+      <div class="avatar"><span aria-hidden="true">GG</span><img src="CV%20Picture.jpeg" alt="Giorgi Getsadze" onerror="this.remove()" /></div>
+      <h1>Giorgi Getsadze</h1>
+      <p class="role">Full-Stack Software Engineer<br />Web &amp; Mobile &middot; <span class="nw">Process Automation &middot; AI</span></p>
+
+      <h2>Contact</h2>
+      <ul class="contact">
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Nice, France (Monaco area)</li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg><a href="mailto:giorgigetsadzefr@gmail.com">giorgigetsadzefr@gmail.com</a></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg><a href="https://www.linkedin.com/in/giorgigetsadze" target="_blank" rel="noopener">linkedin.com/in/giorgigetsadze</a></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg><a href="https://www.xpylon.com" target="_blank" rel="noopener">www.xpylon.com</a></li>
+      </ul>
+    </header>
+
+    <main class="main">
+      <section class="section" id="profile">
+        <h2 class="section-title">Profile</h2>
+        <div class="summary">
+          <p>Full-stack software engineer with a business background. I build and ship production web and mobile features for <a href="https://www.xpylon.com" target="_blank" rel="noopener">Xpylon</a>, an AI-powered B2B matchmaking platform, using Next.js, React, React Native / Expo, Prisma and PostgreSQL, taking ideas from concept through architecture, implementation, testing and release.</p>
+          <p>In parallel I lead web development and process automation at Go-on Group in Monaco, where I use Python and AI tools to remove manual work, run the group's websites and SEO, and drove the migration from Liferay to WordPress. Years in business development and back-office leadership give me strong product sense and a focus on results.</p>
+        </div>
+        <div class="proof">
+          <div class="proof-row">
+            <p class="proof-label">Products I built</p>
+            <ul class="proof-items"><li><a href="https://www.xpylon.com" target="_blank" rel="noopener">Xpylon app<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></li><li><a href="#projects">Web Scraper GUI</a></li><li><a href="#projects">AI Company-Research Agent</a></li><li><a href="#projects">AI Job Scraper</a></li><li><a href="#projects">Messaging Automation</a></li></ul>
+          </div>
+          <div class="proof-row">
+            <p class="proof-label">Sites I build and run</p>
+            <ul class="proof-items"><li><a href="https://www.xpylon.com" target="_blank" rel="noopener">Xpylon<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></li><li><a href="https://www.go-on-group.com" target="_blank" rel="noopener">Go-on Group<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></li><li><a href="https://goam.go-on-group.com" target="_blank" rel="noopener">GOAM<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></li><li><a href="https://www.gcmonaco.com" target="_blank" rel="noopener">GC Monaco<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></li><li><a href="https://businesstalks.mc" target="_blank" rel="noopener">Business Talks<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></a></li></ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="experience">
+        <h2 class="section-title">Experience</h2>
+
+        <article class="job">
+          <div class="job-head"><h3>Full-Stack Software Engineer</h3><span class="date">Apr 2025 - Present</span></div>
+          <p class="org">Xpylon <span>&middot; Freelance &middot; Nice, France (Remote)</span></p>
+          <ul>
+            <li>Design and deliver cross-platform features with Next.js, React, Expo / React Native, Prisma and PostgreSQL.</li>
+            <li>Built the virtual business-card experience: QR sharing and scanning, public profiles, deep linking, contact saving, data extraction and exports.</li>
+            <li>Develop core product workflows: communities, messaging, notifications, content publishing, invitations, search, profiles and administration.</li>
+            <li>Build backend APIs, database changes, authorization controls, duplicate detection, bulk operations and data-management tools.</li>
+            <li>Maintain integrations for Stripe subscriptions and webhooks, social authentication, push notifications and transactional email.</li>
+            <li>Diagnose production issues, improve reliability and responsive UX, and manage Android releases on Google Play.</li>
+          </ul>
+          <ul class="tags"><li>Next.js</li><li>React</li><li>React Native</li><li>Prisma</li><li>PostgreSQL</li><li>Stripe</li></ul>
+        </article>
+
+        <article class="job">
+          <div class="job-head"><h3>Go-on Group Business Development</h3><span class="date">Jun 2019 - Present</span></div>
+          <p class="org">Monaco <span>&middot; 7 yrs 4 mos &middot; four roles</span></p>
+
+          <div class="sub-role">
+            <h4>Web Development &amp; Process Automation Lead</h4>
+            <span class="date">Jan 2022 - Present &middot; Permanent &middot; Hybrid</span>
+            <p class="label">What I do</p>
+            <ul>
+              <li>Apply Python automation and AI tools to streamline workflows: reporting, data processing and web scraping.</li>
+              <li>Build and grow the web presence for Xpylon, our AI-powered B2B matchmaking platform: landing pages, conversion funnels, an insights blog and a YouTube series; brought Xpylon to Google Play (bug fixes, new development, maintenance, store listing).</li>
+              <li>Lead web development and management across Go-on Group's web properties on WordPress, including the migration from Liferay.</li>
+              <li>Own the group's SEO and GEO (generative-engine optimization) strategy: competitor analysis, keyword research and on-page work to grow visibility across Google and AI search engines.</li>
+              <li>Manage digital marketing and the company's email-signature infrastructure across 50+ users.</li>
+              <li>Manage the GDPR compliance project to ensure data protection.</li>
+            </ul>
+            <p class="label">Key achievements</p>
+            <ul>
+              <li>Built automated reporting and branded KPI decks for leadership, cutting manual workload.</li>
+              <li>Launched Xpylon on Google Play, taking the platform mobile.</li>
+              <li>Ran a full SEO/GEO audit and keyword program, growing organic visibility for Go-on Group and Xpylon.</li>
+              <li>Migrated the company's web presence from Liferay to WordPress, improving performance and user experience.</li>
+            </ul>
+            <p class="sites">Websites: <a href="https://www.go-on-group.com/" target="_blank" rel="noopener">go-on-group.com</a> &middot; <a href="https://goam.go-on-group.com/" target="_blank" rel="noopener">goam.go-on-group.com</a> &middot; <a href="https://www.xpylon.com/" target="_blank" rel="noopener">www.xpylon.com</a> &middot; <a href="https://www.gcmonaco.com/" target="_blank" rel="noopener">gcmonaco.com</a> &middot; <a href="https://businesstalks.mc/" target="_blank" rel="noopener">businesstalks.mc</a></p>
+            <ul class="tags"><li>Python</li><li>Process automation</li><li>WordPress</li><li>SEO / GEO</li><li>GDPR</li></ul>
+          </div>
+
+          <div class="sub-role">
+            <h4>Head / Partner of Back Office</h4>
+            <span class="date">Aug 2021 - Present &middot; Permanent &middot; Remote</span>
+            <p class="label">What I do</p>
+            <ul>
+              <li>Lead and manage the back-office team to ensure efficient operations.</li>
+              <li>Develop team-building initiatives to enhance collaboration.</li>
+              <li>Solve complex problems to improve workflow and productivity.</li>
+              <li>Communicate across departments to align goals and objectives.</li>
+            </ul>
+            <p class="label">Key achievements</p>
+            <ul>
+              <li>Streamlined back-office processes, improving the efficiency of other teams and the group.</li>
+              <li>Reduced group costs through the back office and implemented solutions that lowered operational costs.</li>
+            </ul>
+            <ul class="tags"><li>Team leadership</li><li>Communication</li><li>Strategic planning</li></ul>
+          </div>
+
+          <div class="sub-role">
+            <h4>Business Development Specialist</h4>
+            <span class="date">Oct 2019 - Present &middot; Freelance &middot; Hybrid</span>
+            <p class="label">What I do</p>
+            <ul>
+              <li>Conduct market analysis to identify growth opportunities.</li>
+              <li>Drive business development initiatives to expand the client base.</li>
+              <li>Manage inside sales and client acquisition processes.</li>
+              <li>Analyze data to inform business strategies and support back-office functions.</li>
+            </ul>
+            <p class="label">Key achievements</p>
+            <ul>
+              <li>Helped secure new clients every year to increase revenue: 15 in 2023 and 30 in 2024.</li>
+              <li>Improved data analysis processes and market research.</li>
+              <li>Expanded the new CRM system (Microsoft Dynamics).</li>
+            </ul>
+            <ul class="tags"><li>Business development</li><li>Market analysis</li><li>CRM</li></ul>
+          </div>
+
+          <div class="sub-role">
+            <h4>Financial Business Development Intern</h4>
+            <span class="date">Jun 2019 - Oct 2019 &middot; On-site</span>
+            <p class="label">What I did</p>
+            <ul>
+              <li>Designed strategies to expand the company globally over the following years.</li>
+              <li>Identified cost-effective methods to grow the company's offices worldwide.</li>
+              <li>Collaborated with international teams and analyzed information to forecast upcoming trends.</li>
+              <li>Prepared reports for the CEO to review progress and guide future actions.</li>
+            </ul>
+            <p class="label">Key achievements</p>
+            <ul>
+              <li>Created a growth plan adapted to different markets and future opportunities.</li>
+              <li>Helped make operations cheaper and more efficient.</li>
+              <li>Initiated the process to open the company's first office in Georgia.</li>
+            </ul>
+            <ul class="tags"><li>Strategic planning</li><li>Cost optimization</li><li>Presentations</li></ul>
+          </div>
+        </article>
+
+        <article class="job">
+          <div class="job-head"><h3>Inventory Specialist</h3><span class="date">Nov 2018 - Jun 2019</span></div>
+          <p class="org">RGIS <span>&middot; Greater Nice area, France</span></p>
+          <ul>
+            <li>Carried out timed stock counts and met target goals.</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <div class="job-head"><h3>Guest Relations Specialist</h3><span class="date">Oct 2017 - Apr 2018</span></div>
+          <p class="org">Eldan <span>&middot; Jerusalem, Israel</span></p>
+          <ul>
+            <li>Provided full customer service for hostel guests and resolved their issues.</li>
+            <li>Handled room reservations, payments and refunds.</li>
+          </ul>
+        </article>
+
+        <article class="job">
+          <div class="job-head"><h3>Envirotech</h3><span class="date">May 2016 - Sep 2017</span></div>
+          <p class="org">Georgia <span>&middot; 1 yr 5 mos &middot; two roles</span></p>
+          <div class="sub-role">
+            <h4>Sales Department Manager</h4>
+            <span class="date">May 2017 - Sep 2017</span>
+            <ul>
+              <li>Managed a team of four people and handled hiring.</li>
+              <li>Developed the new sales department and achieved its goals.</li>
+            </ul>
+          </div>
+          <div class="sub-role">
+            <h4>Sales Representative</h4>
+            <span class="date">May 2016 - May 2017</span>
+            <ul>
+              <li>Sold services and performed cost-benefit analyses for existing and potential customers.</li>
+              <li>Maintained positive business relationships to ensure future sales, working both individually and in a team.</li>
+            </ul>
+          </div>
+        </article>
+      </section>
+
+      <section class="section" id="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects">
+          <div class="project">
+            <h3>Web Scraper GUI</h3><span class="date">2026 - Present</span>
+            <p>Desktop scraper for trade-show and directory websites. Works from a URL, local HTML or an Excel list of links, handles JavaScript-heavy pages with infinite scroll or pagination, and includes a visual picker so no selectors are needed.</p>
+            <ul class="tags"><li>Python</li><li>Selenium</li><li>PyQt</li></ul>
+          </div>
+          <div class="project">
+            <h3>AI Company-Research Agent</h3><span class="date">2025 - Present</span>
+            <p>Takes an Excel list of companies, finds each official website and extracts business contact emails. Uses a local AI model so data stays on the machine, and flags uncertain rows for review.</p>
+            <ul class="tags"><li>Python</li><li>Local LLM</li><li>Excel</li></ul>
+          </div>
+          <div class="project">
+            <h3>Weekly AI LinkedIn Job Scraper</h3><span class="date">2026 - Present</span>
+            <p>Automated pipeline that collects job postings every week and uses AI to parse and summarize each description, surfacing relevant roles and key requirements.</p>
+            <ul class="tags"><li>Python</li><li>AI</li><li>Scheduling</li></ul>
+          </div>
+          <div class="project">
+            <h3>Rich-Text Messaging Automation</h3><span class="date">2022 - Present</span>
+            <p>Cross-platform desktop app that sends personalized HTML emails in bulk through Outlook from an Excel contact list, with a rich-text editor and per-row personalization.</p>
+            <ul class="tags"><li>Python</li><li>Outlook</li><li>Email marketing</li></ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="education">
+        <h2 class="section-title">Education</h2>
+        <div class="edu">
+          <div class="job-head"><h3>Master's degree, European &amp; International Private Banking</h3><span class="date">2018 - 2019</span></div>
+          <p class="org">IAE Nice &middot; Graduate School of Management</p>
+          <p>Grade 15.5 / 20. Financial management, international accounting, investment strategies, portfolio management, credit risk. Regularly selected as team project lead.</p>
+        </div>
+        <div class="edu">
+          <div class="job-head"><h3>Bachelor of Business Administration (BBA), Healthcare Administration</h3><span class="date">2011 - 2015</span></div>
+          <p class="org">Teaching University "Geomedi", Tbilisi</p>
+          <p>Economics, statistics, accounting, financial management, macroeconomics.</p>
+        </div>
+      </section>
+
+      <section class="section" id="recommendations">
+        <h2 class="section-title">Recommendations</h2>
+        <blockquote>
+          "I had the pleasure of working with Giorgi while he was leading the Back Office team, and I can say that he was always someone we could rely on. He manages his team very well, keeps things organized and is always available to support when needed. &hellip; He is very good at multitasking, can handle different priorities at the same time, and always finds a way to get things done."
+          <cite>Ana Chelidze, Back Office Manager &middot; Go-on Group Business Development</cite>
+        </blockquote>
+        <blockquote>
+          "He is a very passionate and curious person, who is always looking to improve his skills and knowledge. He is a solution finder and logical minded."
+          <cite>Paul Gray, Ing&eacute;nieur Commercial &middot; worked with Giorgi at Go-on Group</cite>
+        </blockquote>
+      </section>
+    </main>
+
+    <aside class="side side-rest" aria-label="Skills, languages and certifications">
+      <h2>Skills</h2>
+      <div class="skill-group">
+        <h3>Frontend &amp; Mobile</h3>
+        <ul class="chips"><li>React</li><li>Next.js</li><li>React Native</li><li>Expo</li><li>JavaScript</li><li>HTML / CSS</li><li>Responsive UX</li></ul>
+      </div>
+      <div class="skill-group">
+        <h3>Backend &amp; Data</h3>
+        <ul class="chips"><li>Prisma</li><li>PostgreSQL</li><li>REST APIs</li><li>Auth &amp; permissions</li><li>Stripe</li><li>Push notifications</li></ul>
+      </div>
+      <div class="skill-group">
+        <h3>Automation &amp; AI</h3>
+        <ul class="chips"><li>Python</li><li>Selenium</li><li>Web scraping</li><li>PyQt</li><li>LLM tools</li><li>Excel automation</li></ul>
+      </div>
+      <div class="skill-group">
+        <h3>Web &amp; Growth</h3>
+        <ul class="chips"><li>WordPress</li><li>SEO / GEO</li><li>Email marketing</li><li>GDPR</li><li>Analytics</li></ul>
+      </div>
+      <div class="skill-group">
+        <h3>Business</h3>
+        <ul class="chips"><li>Business development</li><li>Market analysis</li><li>MS Dynamics CRM</li><li>Team leadership</li><li>Project management</li></ul>
+      </div>
+
+      <h2>Languages</h2>
+      <ul class="lang">
+        <li>Georgian <span>Native</span></li>
+        <li>Hebrew <span>Native</span></li>
+        <li>English <span>Full professional</span></li>
+        <li>Russian <span>Limited working</span></li>
+        <li>French <span>Elementary</span></li>
+      </ul>
+
+      <h2>Certifications</h2>
+      <ul class="certs">
+        <li>TOEIC English &middot; score 840<small>TOEIC Program &middot; Jul 2018</small></li>
+        <li>English Level: Upper Intermediate<small>TLC Tbilisi Language Centre &middot; Jul 2015</small></li>
+        <li>Professional World<small>Technology Development Fund &middot; Jul 2015</small></li>
+        <li>ISIE Certificate<small>International School of Intellect and Education &middot; Jun 2016</small></li>
+      </ul>
+    </aside>
+  </div>
+  </div>
 </body>
 </html>
