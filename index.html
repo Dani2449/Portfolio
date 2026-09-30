@@ -64,8 +64,8 @@
     .btn-sm svg{width:16px;height:16px}
 
     /* Hero */
-    .hero{position:relative;overflow:hidden;padding:84px 0 72px}
-    .hero::before,.hero::after{content:"";position:absolute;border-radius:50%;pointer-events:none}
+    .hero{position:relative;overflow-x:clip;padding:84px 0 72px}
+    .hero::before,.hero::after{content:"";position:absolute;z-index:-1;border-radius:50%;pointer-events:none}
     .hero::before{top:-260px;right:-180px;width:720px;height:720px;background:radial-gradient(closest-side,color-mix(in srgb,var(--accent) 18%,transparent),transparent)}
     .hero::after{bottom:-320px;left:-220px;width:620px;height:620px;background:radial-gradient(closest-side,color-mix(in srgb,var(--accent-2) 14%,transparent),transparent)}
     .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.3fr 1fr;gap:64px;align-items:center}
